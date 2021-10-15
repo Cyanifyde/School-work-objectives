@@ -1,7 +1,13 @@
+import re 
 import dns.resolver 
-x=input("please input your email\n")
-domain = x.rsplit('@', 1)[-1]
+email=input("please input your email\n")
 try:
-    print("email is valid" if bool(dns.resolver.resolve(domain,'MX'))==True else "false")
+    if re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        domain = email.rsplit('@', 1)[-1]
+        if bool(dns.resolver.resolve(domain,'MX')):
+            print("valid email")
+        else: print("non-existant email")
+    else:
+        print("invalid email")
 except:
-    print("email not vaid")
+    print("invalid email")
