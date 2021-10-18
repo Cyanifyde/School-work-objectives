@@ -8,9 +8,10 @@ def output(list1):
     x=int(input("input the number of the project you want to run\n"));return x;clear()
 def main():
     clear();__=([(i) for i in list(filter(os.path.isdir, os.listdir("/home/runner/obs-all"))) if i!=".upm" and i!="extra" and i!=".git"])
-    for x in range (len(__)):print(x+1,"--",__[x]);_=int(input("what objective do you want to run?, enter then number next to the objective\n"));go_somewhere(output(__[_-1]),(__[_-1]))
+    for x in range (len(__)):print(x+1,"--",__[x])
+    _=int(input("what objective do you want to run?, enter then number next to the objective\n"));go_somewhere(output(__[_-1]),(__[_-1]))
 if __name__=="__main__":
     clear()
     try:main()
     except:pass
-    os.system("python main.py")
+os.system("python main.py")
