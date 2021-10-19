@@ -1,4 +1,4 @@
-import time #imports time
+import time
 class difference():
     def __init__(self, no1: float, no2: float):
         self.no1: float= no1

@@ -1,9 +1,12 @@
+""""
+Write a program to produce the following output:
+The digits are: 0123456789
+The characters are: abcdABCD@#!£
+The alphanumerics are: 0123456789 abcdABCD@#!£
+"""
 def chars():
-    #cant start a int with 0 so currently stored as a string
     numbers="0123456789"
-    #list of some commonly used characters
     characters="abcdABCD@#!£"
-    #alphanumerics is a group of characters from both nubers and characters
     alphanumerics=numbers+characters
     print("the digits are:",numbers)
     print("The characters are:",characters)
