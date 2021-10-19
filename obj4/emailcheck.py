@@ -4,13 +4,13 @@ A valid email address must contain an @ symbol and at least one dot. Write a fun
 import re 
 import dns.resolver 
 email=input("please input your email\n")
-try:
-    if re.match(r"[^@]+@[^@]+\.[^@]+", email):
-        domain = email.rsplit('@', 1)[-1]
+def emailmx(email):
+    domain = email.rsplit('@', 1)[-1]
+    try:
         if bool(dns.resolver.resolve(domain,'MX')):
             print("valid email")
-        else: print("non-existant email")
-    else:
-        print("invalid email")
-except:
+    except: print("non-existant email")
+if re.match(r"[^@]+@[^@]+\.[^@]+", email):
+    emailmx(email)
+else:
     print("invalid email")
