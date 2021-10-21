@@ -16,7 +16,7 @@ def convert(x):
         EBCDIC=_+193
     return ascii , EBCDIC
 try:
-    x=input()
+    x=input("please input a letter")
 except:
     invalid()
 if len(x)>1 and len(x)<1:
@@ -24,6 +24,8 @@ if len(x)>1 and len(x)<1:
 else:
     print()
     try:
-        print(convert(x))
+        y=convert(x)
+        print("the letter",x, "in ascii is",y[0])
+        print("in EBCDIC it is",y[1] )
     except:
         invalid()

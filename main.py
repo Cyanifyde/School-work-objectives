@@ -1,6 +1,6 @@
 #this page is not meant to be readable however please ask me for a description if you want
-import os,time; clear=lambda: os.system("clear")
-def go_somewhere(_,_1): clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);x=input("\npress enter to go to main menu")
+import os; clear=lambda: os.system("clear")
+def go_somewhere(_,_1): clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu")
 def output(list1):
     clear()
     for f in range (len(os.listdir(list1))):print(f+1,"--",os.listdir(list1)[f-1])
