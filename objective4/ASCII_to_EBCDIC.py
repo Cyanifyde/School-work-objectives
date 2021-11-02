@@ -16,7 +16,7 @@ def convert(x):
         EBCDIC=_+193
     return ascii , EBCDIC
 try:
-    x=input("please input a letter")
+    x=input("please input a letter\n")
 except:
     invalid()
 if len(x)>1 and len(x)<1:

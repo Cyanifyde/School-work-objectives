@@ -1,10 +1,10 @@
 #this page is not meant to be readable however please ask me for a description if you want
 import os; clear=lambda: os.system("clear")
-def go_somewhere(_,_1): clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu")
+def go_somewhere(_,_1): clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu\n")
 def output(list1):
     clear()
     for f in range (len(os.listdir(list1))):print(f+1,"--",os.listdir(list1)[f-1])
-    x=int(input("input the number of the project you want to run\n"));return x;clear()
+    x=int(input("input the number of the project you want to run\nnote all programms wth 'extra' in their names is just that... they are not to be used for marking\n"));return x;clear()
 def main():
     clear();__=([(i) for i in list(filter(os.path.isdir, os.listdir("/home/runner/obs-all"))) if i!=".upm" and i!="extra" and i!=".git"])
     for x in range (len(__)):print(x+1,"--",__[x])

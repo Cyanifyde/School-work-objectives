@@ -17,5 +17,4 @@ def calculate(x,y,z):
     greppers=(x*2+y*2)
     carpet=x*y*z
     return (under+greppers+carpet+50)
-
 print("£",calculate(x,y,z))
