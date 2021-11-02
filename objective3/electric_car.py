@@ -4,7 +4,7 @@ Customers gain 1.5 points per minute, rounded down.
 Write a function that takes the number of minutes charged and returns two values: the total cost and the points gained.
 The program should output the result with the currency formatted with a pound sign and two decimal places.
 """
-print()
+
 import math
 def cal(time1):
     if  time1<= 15:

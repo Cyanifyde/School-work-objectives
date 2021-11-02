@@ -5,7 +5,7 @@ The program should output:
 “For x nitrate dose y ml”
 Where x is the parameter and y is the returned value.
 """
-import time
+
 class dosage():
     def __init__(self, dose: float, ammount: float):
         self.dose: float= dose
@@ -45,4 +45,3 @@ while run==True:
 for x in fish:
     if not x.dose==None or not x.ammount==None:
         print("dosage no:",fish.index(x)+1,"with a nitrate of",x.dose,"needs",x.ammount,"ml")
-time.sleep(10)

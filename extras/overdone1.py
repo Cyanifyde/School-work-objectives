@@ -1,4 +1,3 @@
-import time
 class Squares:
     def __init__(self, start,stop,numfrom,numto,type):
         self.start = start
@@ -31,4 +30,3 @@ for i in p :
         else:
             v="cubed"
         print(str(i[1]),v,"is",str(i[0]))
-time.sleep(10)

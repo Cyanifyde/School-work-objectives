@@ -3,6 +3,7 @@ Although UNICODE is the accepted standard for representing characters using numb
 Using the table below, write a function that takes a letter and returns both the ASCII and EBCDIC code for the letter.
 Be careful, Unlike the ASCII codes, the EBCDIC codes are not sequential.
 """
+
 from string import ascii_lowercase as lower
 def invalid():
     print("invalid letter")

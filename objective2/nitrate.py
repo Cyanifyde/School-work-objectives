@@ -5,6 +5,7 @@ The program should output:
 “For x nitrate dose y ml”
 Where x is the parameter and y is the returned value.
 """
+
 def choice(a):
     if a>=10:
         return 3

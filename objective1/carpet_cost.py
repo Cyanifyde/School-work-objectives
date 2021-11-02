@@ -9,6 +9,7 @@ The fitting fee is £50.
 Test the program with a 7 x 6m room and a £17m2 carpet.
 E.g. 7m x 6m room with a £17 carpet = £714 + £126 + £26 + £50 = £916
 """
+
 x=int(input("please input length"))
 y=int(input("please input width"))
 z=int(input("please input cost per m^2"))

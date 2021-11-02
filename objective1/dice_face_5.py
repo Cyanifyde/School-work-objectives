@@ -8,6 +8,7 @@ o  #   #  o
 o         o
 ooooooooooo
 """
+
 def output5():
     print("ooooooooooo")
     print("o         o")
