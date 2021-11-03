@@ -1,15 +1,6 @@
-#this page is not meant to be readable however please ask me for a description if you want
 import os;clear=lambda:os.system("clear");un=[".upm","extra",".git"]
-def go_somewhere(_,_1):clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu\n")
-def output(list1):
-    for f in range (len(os.listdir(list1))):print(f+1,"--",os.listdir(list1)[f-1])
-    x=int(input("input the number of the project you want to run\nnote all programms wth 'extra' in their names is just that... they are not to be used for marking\n"));return x
-def main():
-    __=([(i)for i in list(filter(os.path.isdir,os.listdir("/home/runner/obs-all")))if i not in un])
-    for x in range(len(__)):print(x+1,"--",__[x])
-    _=int(input("what objective do you want to run?, enter then number next to the objective\n"));clear();go_somewhere(output(__[_-1]),(__[_-1]))
-if __name__=="__main__":
-    clear()
-    try:main()
-    except:pass
-os.system("python main.py")
+def send(__,_,x):clear();os.system("python "+__[_]+"/"+os.listdir(__[_])[x-2]);_=("" if input("\npress enter to go to rerun\nor input anything else to return")!="" else "1\n"+str(_)+"\n"+str(x)) ; f=open("update.txt","w");f.write(_);f.close();os.system("python main.py")
+def paths():return ([(i)for i in list(filter(os.path.isdir,os.listdir("/home/runner/obs-all")))if i not in un])
+def main():clear();__=paths();[print(x+1,"--",__[x]) for x in range (len(__))];_=int(input("what objective do you want to run?, enter then number next to the objective\nnote that the programs in the 'extra' directory is just extra, it is not to be used for marking as it doesnt follow the spec\n"))-1;clear();[print(f+1,"--",os.listdir(__[_])[f-1]) for f in range (len(os.listdir(__[_])))];send(__,_,int(input("input the number of the project you want to run\n")))
+try:f=open("update.txt","r");f=f.read().splitlines();main() if f[0]=="0" else send(paths(),int(f[1]),int(f[2]))
+except:f=open("update.txt","w");f.write("0");f.close();os.system("python main.py")
