@@ -8,6 +8,7 @@ Write a function that returns the basic points value of a word in the game scrab
 8 points: J, X.
 10 points: Q, Z.
 """
+
 a="EAIONRTLSU";b="DG";c="BCMP";d="FHVWY";e="k";f="JK";g="QZ"
 def points(string):
     _=0

@@ -4,6 +4,7 @@ The Cassini-Huygens spacecraft that visited the planet Saturn had 2.5Gb of memor
 0110011 0 contains four ones (including the parity bit which is set to 0). This sequence is incorrect and must be corrected.
 Write a function called, “OddParity” that takes a binary sequence as a parameter and returns True if the number of ones is odd and False if the number of ones is even.
 """
+
 def OddParity(sequence):
     count=sequence.count("1")
     if (count % 2) != 0:
