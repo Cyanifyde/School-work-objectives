@@ -35,4 +35,3 @@ def convert(num):
             num=x
 number=int(input("please input a number\n"))
 print("the number {} in binary is {}".format(number,pass_list(convert(number))))
-
