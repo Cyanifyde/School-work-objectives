@@ -11,4 +11,4 @@ def do(y):
         elif (x % 5) == 0:
             print("Buzz")
         else:print(x)
-do(int(input("please input a nuber to go to")))
+do(int(input("please input a nuber to go to\n")))

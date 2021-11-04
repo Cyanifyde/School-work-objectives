@@ -3,9 +3,17 @@
     "main.py": [
       {
         "id": "4e8ed2d7-afaa-4ba0-8978-efd43de6f523",
-        "line": 3,
-        "version": 2151,
-        "index": 160
+        "line": 1,
+        "version": 2284,
+        "index": 0
+      }
+    ],
+    "update.txt": [
+      {
+        "id": "fab42ad1-cbb3-43e0-97f9-b9fe121bb658",
+        "line": 1,
+        "version": 17,
+        "index": 0
       }
     ]
   }
