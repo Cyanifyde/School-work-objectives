@@ -11,7 +11,7 @@ def depreciates(year,value,minimum):
     years=0
     reached=False
     while reached==False:
-        print("{} : £{}".format(year,value))
+        print(year," : £{0:.2f}".format(value))
         if value>minimum and years ==0 or 1:
             value-=(0.3*value)
         else:
@@ -20,6 +20,6 @@ def depreciates(year,value,minimum):
             return year
         year+=1
         years+=1
-x=depreciates(2020,12500,6000)
+x=depreciates(int(input("please input the year\n")),int(input("please input the currnt value\n")),int(input("pease input the minimun value\n")))
 print("part exchange in {}".format(x))
 
