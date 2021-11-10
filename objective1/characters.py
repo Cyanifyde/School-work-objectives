@@ -1,4 +1,5 @@
 """"
+1, please do not change this line
 Write a program to produce the following output:
 The digits are: 0123456789
 The characters are: abcdABCD@#!£

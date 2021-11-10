@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 An electronic advertising board illustrates a sale at 60% off. To make this more eye-catching, the number shown starts at 10 and increases by a random amount until 60 is reached. Write an algorithm that will achieve this. E.g.
 10% off.
 24% off.

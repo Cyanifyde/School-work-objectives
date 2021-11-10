@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 The top prize in a lottery is won by matching three numbers between 1 and 30 to three random numbers drawn in the same order. When a ball is drawn it is put back into the machine before another ball is drawn. There are always 30 balls in the machine before a ball is drawn and a player may choose the same ball more than once. A draw takes place once a week. Write a function that takes three numbers as parameters, draws three random numbers between 1 and 30 and returns the number of weeks it took to win the jackpot. E.g.
 Numbers chosen: 17, 12, 25 must match: ball one is 17, ball two is 12, ball three is 25.
 """

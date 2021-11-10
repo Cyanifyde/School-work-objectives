@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 Write a program that illustrates the depreciation of the value of a car. The program takes three parameters, the year, the value of the car and the minimum resale value. The car depreciates by 30% in the first and second year, and 20% in each subsequent year. The program should output the values from the model until the resale value is reached. E.g.
 Car is bought for £12500. Minimum resale value is £6000.
 2020: £12500

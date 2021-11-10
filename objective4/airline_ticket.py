@@ -1,4 +1,5 @@
 """"
+1, please do not change this line
 Write a function that takes the names of two cities as parameters and returns a string that is the first four characters of each city separated with a dash. For example: London, Madrid would return LOND-MADR
 """
 

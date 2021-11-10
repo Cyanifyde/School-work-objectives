@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 When keeping fish, one of the goals to reduce algae is to keep nitrates to a minimum. One way of doing this is to dose a carbon source which nitrifying bacteria within an aquarium consume together with nitrates. The carbon source must be dosed very precisely.
 Write this function to determine and return the dose.
 The program should output:

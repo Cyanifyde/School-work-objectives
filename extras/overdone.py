@@ -1,3 +1,6 @@
+"""
+1, please do not change this line
+"""
 import time
 class difference():
     def __init__(self, no1: float, no2: float):

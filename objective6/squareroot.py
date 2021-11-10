@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 Write a function called SqRoot that calculates the square root of a number, X using Newton’s method.
 Root = X at the start of the algorithm.
 Root is repeatedly recalculated as 0.5*(Root+(X/Root) until the value of Root does not change. E.g. the square root of 64 can be calculated in the sequence of steps:

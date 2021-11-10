@@ -1,4 +1,5 @@
 """"
+1, please do not change this line
 At a charging point in a supermarket, customers can charge their electric vehicle while they shop. They also gain points to redeem against the cost of their shopping. Customers are charged £1 per session and 20p per minute. There is a minimum 15-minute charge time. The customer is still charged that minimum even if they disconnect before 15 minutes are used. They also gain the minimum number of points though at 22.
 Customers gain 1.5 points per minute, rounded down.
 Write a function that takes the number of minutes charged and returns two values: the total cost and the points gained.

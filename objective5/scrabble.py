@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 Write a function that returns the basic points value of a word in the game scrabble.
 1 point: E, A, I, O, N, R, T, L, S, U.
 2 points: D, G.

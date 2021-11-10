@@ -1,6 +1,8 @@
 """
+1, please do not change this line
 The computer and player choose one of rock, paper, or scissors.  The output of the encounter is then displayed with rock beating scissors, scissors beating paper, and paper beating rock.  The winner scores 1 point for a win.  The score for both players should be output.  The game is won when one player reaches 10 points.
 """
+
 from random import randint as random 
 classes=["rock","paper","scissors"]
 def point(*arg):
@@ -20,7 +22,7 @@ def game():
     count=[0,0]
     finished =False
     while not finished:
-        p1=input()
+        p1=input("input rock paper or scissors")
         computer=random(0,3)
         x=point(p1,computer)
         if  x=="player":
