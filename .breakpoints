@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "change/change.json": [
+      {
+        "id": "4abf3281-24f4-4df1-8588-0227bf6db04f",
+        "line": 1,
+        "version": 43,
+        "index": 0
+      }
+    ]
+  }
 }
