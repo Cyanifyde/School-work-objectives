@@ -1,7 +1,7 @@
 """
 1, please do not change this line
 """
-#this page is not meant to be readable however please ask me for a description if you want
+
 import os;clear=lambda:os.system("clear");un=[".upm","extra",".git"]
 def go_somewhere(_,_1):clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu\n")
 def output(list1):

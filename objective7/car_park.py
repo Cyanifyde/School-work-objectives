@@ -1,4 +1,5 @@
 """
+1, please do not change this line
 A local car park has the following charges:
 Up to 1 hour		£1.50
 Up to 2 hours	£2.90
@@ -11,18 +12,16 @@ Disabled users	Free for the first 3 hours
 Write a program that allows the user to input the time they arrive, the time they leave and whether they are a disabled blue badge holder. The program outputs the total charge for parking. The times are entered using the 24-hour clock in the format 00:00. E.g. 6pm would be entered as 18:00.
 """
 
-timei = input()
-timel = input()
-blue = input()
 from datetime import datetime
-
+timei = input("please input the time you arrived")
+timel = input("please input the time you left")
+blue = input("do you have a blue badge yes/no")
 
 def bluebadge(blue):
     if blue.lower() == "yes":
         return True
     else:
         return False
-
 
 def format(s, l):
     s1 = datetime.strptime(s, "%H:%M")
@@ -40,7 +39,6 @@ def check_outtime(s1, l1):
     else:
         return True
 
-
 def cost_disabled(s, l):
     s1, l1 = format(s, l)
     f = check_outtime(s1, l1)
@@ -50,30 +48,26 @@ def cost_disabled(s, l):
             return
         else:
             pass
-    lists=["£1.50","£2.90","£3.90","£4.50","£8.00"]
-    
-    d=int(l1)-int(s1)-3
-
+    lists=["0","0,","0","£1.50","£2.90","£3.90","£4.50","£8.00"]
+    d=(int(l1)-int(s1))//100-4
     print(round(d,2))
     try:
+        
         print("it costs",lists[d])
     except:
         print("it costs",lists[4])
-    
-
-
 
 def cost(s, l):
     lists=["£1.50","£2.90","£3.90","£4.50","£8.00"]
     s1, l1 = format(s, l)
     f = check_outtime(s1, l1)
     if f:
-        d=l1-s1
+        d=(int(l1)-int(s1))//100
+        print(d)
         try:
             print("it costs",lists[d])
         except:
             print("it costs",lists[4])
-
 
 if bluebadge(blue) == False:
     cost(timei, timel)
