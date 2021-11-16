@@ -42,3 +42,4 @@
 |   objective7   |     rock_paper_sizzors.py      |  yes   |
 |   objective7   |            adder.py            |  yes   |
 |  old_programs  |          main_old.py           |  yes   |
+|   objective7   |             pin.py             |  yes   |

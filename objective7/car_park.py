@@ -13,9 +13,9 @@ Write a program that allows the user to input the time they arrive, the time the
 """
 
 from datetime import datetime
-timei = input("please input the time you arrived")
-timel = input("please input the time you left")
-blue = input("do you have a blue badge yes/no")
+timei = input("please input the time you arrived\n")
+timel = input("please input the time you left\n")
+blue = input("do you have a blue badge yes/no\n")
 
 def bluebadge(blue):
     if blue.lower() == "yes":
