@@ -43,3 +43,4 @@
 |   objective7   |            adder.py            |  yes   |
 |  old_programs  |          main_old.py           |  yes   |
 |   objective7   |             pin.py             |  yes   |
+|   objective7   |         conversion.py          |  yes   |
