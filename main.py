@@ -2,7 +2,7 @@
 look at change_logs.txt to see if the wanted program is finished
 DO NOT CHANGE main.py or any file in /change
 """
-x=False #change this to  Falsevrun change log code, turn it back after
+x=False #change this to  False to run change log updater, turn it back after
 
 import os, change.changelog;clear=lambda:os.system("clear");un=[".upm","extra",".git","change"];change.changelog.a(x)
 def send(__,_,x):clear();os.system("python "+__[_]+"/"+os.listdir(__[_])[x-2]);_=("" if input("\npress enter to go to rerun\nor input anything else to return\n")!="" else "1\n"+str(_)+"\n"+str(x)) ; f=open("update.txt","w");f.write(_);f.close();os.system("python main.py")
