@@ -30,6 +30,7 @@
 |   objective5   |        prime_number.py         |  yes   |
 |   objective5   |       prime_numers_2.py        |  yes   |
 |   objective5   |          scrabble.py           |  yes   |
+|   objective6   |            week.txt            |   no   |
 |   objective6   |          car_value.py          |  yes   |
 |   objective6   |          cashpoint.py          |  yes   |
 |   objective6   |         den_to_bin.py          |  yes   |
@@ -37,10 +38,11 @@
 |   objective6   |        happy_numbers.py        |  yes   |
 |   objective6   |           lottery.py           |  yes   |
 |   objective6   |         squareroot.py          |  yes   |
-|   objective7   |          password.py           |  yes   |
-|   objective7   |          car_park.py           |  yes   |
 |   objective7   |     rock_paper_sizzors.py      |  yes   |
 |   objective7   |            adder.py            |  yes   |
-|  old_programs  |          main_old.py           |  yes   |
+|   objective7   |          password.py           |  yes   |
+|   objective7   |          car_park.py           |  yes   |
 |   objective7   |             pin.py             |  yes   |
 |   objective7   |         conversion.py          |  yes   |
+|   objective7   |      automatic_feeder.py       |  yes   |
+|  old_programs  |          main_old.py           |  yes   |
