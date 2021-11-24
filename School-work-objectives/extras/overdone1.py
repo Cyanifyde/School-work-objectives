@@ -1,6 +1,4 @@
-"""
-1, please do not change this line
-"""
+
 class Squares:
     def __init__(self, start,stop,numfrom,numto,type):
         self.start = start

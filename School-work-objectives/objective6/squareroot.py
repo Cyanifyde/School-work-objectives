@@ -1,5 +1,4 @@
 """
-1, please do not change this line
 Write a function called SqRoot that calculates the square root of a number, X using Newton’s method.
 Root = X at the start of the algorithm.
 Root is repeatedly recalculated as 0.5*(Root+(X/Root) until the value of Root does not change. E.g. the square root of 64 can be calculated in the sequence of steps:
@@ -15,13 +14,16 @@ Root is repeatedly recalculated as 0.5*(Root+(X/Root) until the value of Root do
 8.0 – This value equals the previous value of Root.
 """
 
+
 def SqRoot(x):
-    root=x
-    v=False
-    while v==False:
-        last=root
-        root =0.5*(root+(x/root))
-        if last==root:
+    root = x
+    v = False
+    while v == False:
+        last = root
+        root = 0.5 * (root + (x / root))
+        if last == root:
             return root
-inp=int(input("please input a number\n"))
-print("the square root of {} is  {}".format(inp,SqRoot(inp)))
+
+
+inp = int(input("please input a number\n"))
+print("the square root of {} is  {}".format(inp, SqRoot(inp)))

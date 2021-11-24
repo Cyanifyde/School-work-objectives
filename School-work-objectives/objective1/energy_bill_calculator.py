@@ -1,5 +1,4 @@
 """"
-1, please do not change this line
 Write a subroutine that will output the raw cost of energy usage by taking three parameters: previous meter reading, current reading and calorific value.
 The units used equals the current reading minus the previous reading.
 kWh = units used * 1.022 * calorific value divided by 3.6.
@@ -9,13 +8,17 @@ You do not need to format the output because the result is the input to further 
 """
 
 import math
-def return_cost(pre,cur,cal):
-    unit=cur-pre
-    kWh=unit*1.022*(cal/3.6)
-    cost=math.floor(((math.floor(kWh))*2.84))
+
+
+def return_cost(pre, cur, cal):
+    unit = cur - pre
+    kWh = unit * 1.022 * (cal / 3.6)
+    cost = math.floor(((math.floor(kWh)) * 2.84))
     return cost
-previous=float(input("please input the previous value"))
-current=float(input("please input the current value"))
-calorific_value=float(input("please input the chlorific value"))
-cost=return_cost(previous,current,calorific_value)
-print("the cost was",cost,"p")
+
+
+previous = float(input("please input the previous value\n"))
+current = float(input("please input the current value\n"))
+calorific_value = float(input("please input the chlorific value\n"))
+cost = return_cost(previous, current, calorific_value)
+print("the cost was", cost, "p")

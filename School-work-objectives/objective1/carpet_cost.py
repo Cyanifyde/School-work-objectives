@@ -1,5 +1,4 @@
 """"
-1, please do not change this line
 Write a subroutine that outputs the cost of fitting a carpet using 3 parameters:
 Width of the room in metres.
 Length of the room in metres.
@@ -11,12 +10,16 @@ Test the program with a 7 x 6m room and a £17m2 carpet.
 E.g. 7m x 6m room with a £17 carpet = £714 + £126 + £26 + £50 = £916
 """
 
-x=int(input("please input length"))
-y=int(input("please input width"))
-z=int(input("please input cost per m^2"))
-def calculate(x,y,z):
-    under=z*3
-    greppers=(x*2+y*2)
-    carpet=x*y*z
-    return (under+greppers+carpet+50)
-print("£",calculate(x,y,z))
+x = int(input("please input length\n"))
+y = int(input("please input width\n"))
+z = int(input("please input cost per m^2\n"))
+
+
+def calculate(x, y, z):
+    under = z * 3
+    greppers = (x * 2 + y * 2)
+    carpet = x * y * z
+    return (under + greppers + carpet + 50)
+
+
+print("£", calculate(x, y, z))

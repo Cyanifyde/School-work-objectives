@@ -1,6 +1,3 @@
-"""
-1, please do not change this line
-"""
 
 import os;clear=lambda:os.system("clear");un=[".upm","extra",".git"]
 def go_somewhere(_,_1):clear();os.system("python "+_1+"/"+os.listdir(_1)[_-2]);input("\npress enter to go to main menu\n")
