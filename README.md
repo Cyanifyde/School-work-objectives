@@ -1,7 +1,7 @@
 # School-work-objectives
 dont bother looking at this
 
-this is made for replit.com it wont run as expected if on any other ide 
+this is made for replit.com it may not run as expected if on any other ide 
 
 dont take this as a representation of my skills, I was asked to make it understandable
 

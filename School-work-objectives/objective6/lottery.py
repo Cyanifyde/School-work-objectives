@@ -17,14 +17,14 @@ def choose(*arg):
         return True
 
 
-f = open("objective6/week.txt", "r")
+f = open("School-work-objectives/objective6/week.txt", "r")
 v = f.read()
 if choose(*((int(input("please input the " + str(x + 1) + " number\n")))
             for x in range(3))):
     print("you won in", int(v) + 1, "weeks")
 else:
     print("\nyou lost")
-    f = open("objective6/week.txt", "w")
+    f = open("School-work-objectives/objective6/week.txt", "w")
     v = int(v) + 1
     f.write(str(v))
     f.close()
