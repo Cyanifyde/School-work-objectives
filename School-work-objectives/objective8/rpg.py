@@ -20,6 +20,7 @@ class action():
         print(self.items[_])
 
     def search(self):
+        print("you have {} items, they are:".format(len(self.items)))
         for x in self.items:
             print(x)
 
@@ -27,12 +28,12 @@ class action():
 inv = action("sword", "bow")
 run = True
 while run == True:
-    _ = input()
+    _ = input("please input an action 'pick','drop','pull','search'\n")
     if _ == "pick":
-        _1 = input()
+        _1 = input("what tem do you want to add?\n")
         inv.pick(_1)
     elif _ == "drop":
-        _1 = input()
+        _1 = input("what item do you want to remove?\n")
         inv.drop(_1)
     elif _ == "pull":
         inv.pull()
