@@ -25,10 +25,10 @@ def pick_dir():
     time.sleep(1)
     y = reads()
     y = y.split("/")
-    for x in range(4):
+    for x in range(3):
         del y[0]
     print(
-        "\n\nwhat folder/script do you want to return to?\nplease either input a number or enter anything else to return to main folder\n"
+        "what folder/script do you want to return to?\nplease either input a number or enter anything else to return to main folder\n"
     )
     y.reverse()
     for x in range(len(y)):
@@ -41,7 +41,7 @@ def pick_dir():
             del y[-1]
         for x in y:
             str += "/" + x
-        str = "/home/runner/all" + str
+        str = "/home/runner" + str
     except:
         str = "/home/runner/all"
     writes(str)
@@ -60,6 +60,7 @@ def paths(x):
 def send(x):
     writes(x)
     os.system("python " + x)
+    print("\n\n")
     pick_dir()
 
 
@@ -67,8 +68,13 @@ def recursion(x):
     v = paths(x)
     writes(x)
     [print(str(x) + " --- " + v[x]) for x in range(len(v))]
-    _ = int(input("what file do you want to open / run?\n"))
-    return x + "/" + str(v[_])
+    try:
+        _ = int(input("what file do you want to open / run?\n"))
+        _=x + "/" + str(v[_])
+    except:
+        clear()
+        _=pick_dir()
+    return _
 
 
 def main():
