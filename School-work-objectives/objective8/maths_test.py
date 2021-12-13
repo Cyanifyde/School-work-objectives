@@ -22,7 +22,7 @@ def test_create():
 
 def gather_name():
     try:
-        name = input("please input your name\n")
+        name = input("please input your name or 'exit' to exit\n")
     except:
         name = None
     return name
@@ -55,11 +55,7 @@ def display():
         print(names[i], "got", score[i], "points")
 
 
-test_create()
-running = True
-while running == True:
-    name_cur = gather_name()
-
+def main(name_cur):
     score_cur = 0
     for i in range(5):
         print(x[i], "+", y[i])
@@ -71,3 +67,15 @@ while running == True:
     store_score(score_cur)
     clear()
     display()
+
+
+test_create()
+running = True
+while running == True:
+    name_cur = gather_name()
+    if name_cur == "exit":
+        clear()
+        display()
+        running = False
+    else:
+        main(name_cur)
