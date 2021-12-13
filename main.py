@@ -6,14 +6,14 @@ please see School-work-objectives/old_programs/
 
 
 def writes(x):  
-    # writes to file loc.txt
+    #writes to file loc.txt
     f = open("loc.txt", "w")
     f.write(x)
     f.close()
 
 
 def reads():  
-    # reads from file returning the directory
+    #reads from file returning the directory
     try:
         f = open("loc.txt", "r")
         f = f.read()
@@ -27,7 +27,7 @@ def reads():
 
 
 def pick_dir():  
-    # allows yoy to navigate back folders after program has run
+    #allows yoy to navigate back folders after program has run
     time.sleep(1)
     y = reads()
     y = y.split("/")
@@ -65,7 +65,7 @@ def paths(x):
 
 
 def send(x):  
-    # runs the program selected
+    #runs the program selected
     writes(x)
     os.system("python " + x)
     print("\n\n")
@@ -73,7 +73,7 @@ def send(x):
 
 
 def recursion(x):  
-    # displays the output of paths() in a structured way
+    #displays the output of paths() in a structured way
     v = paths(x)
     writes(x)
     print("folder:{}\n".format(x))
