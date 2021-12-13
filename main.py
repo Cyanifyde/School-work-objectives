@@ -5,15 +5,20 @@ please see School-work-objectives/old_programs/
 """
 
 
-def writes(x):
+def writes(x):  
+    # writes to file loc.txt
     f = open("loc.txt", "w")
     f.write(x)
     f.close()
 
 
-def reads():
-    f = open("loc.txt", "r")
-    f = f.read()
+def reads():  
+    # reads from file returning the directory
+    try:
+        f = open("loc.txt", "r")
+        f = f.read()
+    except:
+        f = ""
     if f != "":
         _ = f
     else:
@@ -21,7 +26,8 @@ def reads():
     return _
 
 
-def pick_dir():
+def pick_dir():  
+    # allows yoy to navigate back folders after program has run
     time.sleep(1)
     y = reads()
     y = y.split("/")
@@ -46,10 +52,11 @@ def pick_dir():
         str = "/home/runner/all"
     writes(str)
     clear()
-    os.system("python main.py")
+    main()
 
 
-def paths(x):
+def paths(x):  
+    #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
         ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml"
@@ -57,29 +64,59 @@ def paths(x):
     ])
 
 
-def send(x):
+def send(x):  
+    # runs the program selected
     writes(x)
     os.system("python " + x)
     print("\n\n")
     pick_dir()
 
 
-def recursion(x):
+def recursion(x):  
+    # displays the output of paths() in a structured way
     v = paths(x)
     writes(x)
+    print("folder:{}\n".format(x))
     [print(str(x) + " --- " + v[x]) for x in range(len(v))]
     try:
-        _ = int(input("what file do you want to open / run?\n"))
-        _=x + "/" + str(v[_])
-    except:
+        _ = input("\nwhat file do you want to open / run?\n or press enter to pick directory\n or enter any string to go to main directory\n")
+        _ = x + "/" + str(v[int(_)])
+    except ValueError:
+        if not _:
+            clear()
+            _ = pick_dir()
+        else:
+            writes("")
+            main()
+    except IndexError:
         clear()
-        _=pick_dir()
+        recursion(x)
     return _
 
 
+def find_similar(x):
+    #if file/directory is not found then this function will search for the nearest string similar to the path returned by paths()
+    str = ""
+    x = x.split("/")
+    v = x[-1]
+    del x[-1]
+    del x[0]
+    for t in x:
+        str += "/" + t
+    words = paths(str)
+    b = difflib.get_close_matches(v, words, cutoff=0.10, n=1)
+    str += "/" + b[0]
+    writes(str)
+    main()
+
+
 def main():
+    #checks if directory given is a file, if its a file it is run, else it runs recursion() to get to the location you want
     p = True
     path = reads()
+    if path == "/home/runner" or path == "/home":
+        writes("")
+        main()
     while p == True:
         try:
             clear()
@@ -87,18 +124,13 @@ def main():
         except NotADirectoryError:
             send(path)
             p = False
+        except FileNotFoundError:
+            find_similar(path)
 
 
 import os
 import time
+import difflib
 
 clear = lambda: os.system("clear")
-f = reads()
-if os.path.isdir(f):
-    main()
-else:
-    try:
-        send(f)
-    except:
-        writes("/home/runner/all")
-os.system("python main.py")
+main()
