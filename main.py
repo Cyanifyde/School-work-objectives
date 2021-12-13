@@ -1,3 +1,10 @@
+"""
+this page has now been made to be readable
+feel lucky you didnt have to read the compressed versions that came before
+please see School-work-objectives/old_programs/
+"""
+
+
 def writes(x):
     f = open("loc.txt", "w")
     f.write(x)
@@ -42,7 +49,6 @@ def pick_dir():
     os.system("python main.py")
 
 
-
 def paths(x):
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
@@ -79,6 +85,7 @@ def main():
 
 import os
 import time
+
 clear = lambda: os.system("clear")
 f = reads()
 if os.path.isdir(f):
