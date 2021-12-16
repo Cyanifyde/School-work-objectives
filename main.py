@@ -63,12 +63,36 @@ def paths(x):
         if not i.endswith((".json", ".txt"))
     ])
 
+def read_description(x):
+    f = open(x, "r")
+    f = f.read().splitlines()
+    v=[]
+    try:
+        for x in range (len(f)):
+            if f[x]=='"""':
+                for x in range (len(f)):
+                    if f[x+1]!='"""':
+                        v.append(f[x+1])
+                    else:
+                        raise StopIteration
+    except:
+        clear()
+        for x in v:
+            print(x)
+    input()
 
+        
+    
 def send(x):  
     #runs the program selected
     writes(x)
+    print("please press ctrl + c at any time to exit\n")
     os.system("python " + x)
     print("\n\n")
+    p=input("would you like to read the task description?\nyes/no\n")
+    if p=="yes":
+        read_description(x)
+    print()
     pick_dir()
 
 
@@ -133,4 +157,7 @@ import time
 import difflib
 
 clear = lambda: os.system("clear")
-main()
+try:
+    main()
+except:
+    os.system("python main.py")
