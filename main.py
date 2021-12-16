@@ -1,6 +1,6 @@
 """
 this page has now been made to be readable
-feel lucky you didnt have to read the compressed versions that came before
+feel lucky you didn't have to read the compressed versions that came before
 please see School-work-objectives/old_programs/
 """
 
@@ -34,7 +34,7 @@ def pick_dir():
     for x in range(3):
         del y[0]
     print(
-        "what folder/script do you want to return to?\nplease either input a number or enter anything else to return to main folder\n"
+        "what folder/script do you want to return to?\nplease either input a number or enter anything else to return to the main folder\n"
     )
     y.reverse()
     for x in range(len(y)):
