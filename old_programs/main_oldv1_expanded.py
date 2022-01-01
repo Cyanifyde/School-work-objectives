@@ -22,7 +22,7 @@ def output(list1):
 
 def main():
     __ = ([(i) for i in list(
-        filter(os.path.isdir, os.listdir("/home/runner/obs-all")))
+        filter(os.path.isdir, os.listdir("/home/runner/all")))
            if i not in un])
     for x in range(len(__)):
         print(x + 1, "--", __[x])

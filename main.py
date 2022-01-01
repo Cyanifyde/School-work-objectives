@@ -70,8 +70,8 @@ def read_description(x):
     try:
         for x in range (len(f)):
             if f[x]=='"""':
-                for x in range (len(f)):
-                    if f[x+1]!='"""':
+                for i in range (len(f)):
+                    if f[i+1]!='"""':
                         v.append(f[x+1])
                     else:
                         raise StopIteration
@@ -92,7 +92,7 @@ def send(x):
     p=input("would you like to read the task description?\nyes/no\n")
     if p=="yes":
         read_description(x)
-    print()
+    
     pick_dir()
 
 

@@ -1,6 +1,13 @@
 """
 look at change_logs.txt to see if the wanted program is finished
 DO NOT CHANGE main.py or any file in /change
+
+
+go to 
+
+https://replit.com/@StanleyBlack/obs-all#main.py
+
+for a running version
 """
 
 import os
@@ -22,7 +29,7 @@ def send(__, _, x):
 
 def paths():
     return sorted([(i) for i in list(
-        filter(os.path.isdir, os.listdir("/home/runner/obs-all")))
+        filter(os.path.isdir, os.listdir("/home/runner/all")))
                    if i not in un])
 
 
