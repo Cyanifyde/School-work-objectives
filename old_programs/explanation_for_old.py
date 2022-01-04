@@ -1,1 +1,0 @@
-print("most of these no longer work if not at all\nif there is a working version it is linked")
