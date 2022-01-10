@@ -6,7 +6,13 @@ CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCGGA
 CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG
 """
 
-g=open("School-work-objectives/objective9/amino.txt","r").read()
+from _runhelp import ff
+try:
+    v=ff("amino.txt",0)
+except TypeError:
+    exit("error code x00000002")
+
+g=open(v,"r").read()
 count_ttt=g.count("TTT")
 count_tta=g.count("TTA")
 print("there is {} TTT's\nand there are {} TTA's".format(count_ttt,count_tta))

@@ -13,16 +13,21 @@ import time
 
 clear = lambda: os.system("clear")
 
+from _runhelp import ff
+try:
+    v=ff("notes.json",0)
+except TypeError:
+    exit("error code x00000002")
 
 def _save():
-    with open('School-work-objectives/objective8/notes.json', 'w') as f:
+    with open(v, 'w') as f:
         json.dump(notes, f)
 
 
 def _open():
     global notes
     try:
-        with open('School-work-objectives/objective8/notes.json') as f:
+        with open(v) as f:
             notes = json.load(f)
     except FileNotFoundError:
         print("Could not load usagecount.json")

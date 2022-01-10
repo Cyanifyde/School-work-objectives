@@ -5,14 +5,14 @@ please see School-work-objectives/old_programs/
 """
 
 
-def writes(x):  
+def writes(x):
     #writes to file loc.txt
     f = open("loc.txt", "w")
     f.write(x)
     f.close()
 
 
-def reads():  
+def reads():
     #reads from file returning the directory
     try:
         f = open("loc.txt", "r")
@@ -26,7 +26,7 @@ def reads():
     return _
 
 
-def pick_dir():  
+def pick_dir():
     #allows yoy to navigate back folders after program has run
     time.sleep(1)
     y = reads()
@@ -55,55 +55,56 @@ def pick_dir():
     main()
 
 
-def paths(x):  
+def paths(x):
     #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml"
+        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__"
         if not i.endswith((".json", ".txt"))
     ])
+
 
 def read_description(x):
     f = open(x, "r")
     f = f.read().splitlines()
-    v=[]
+    v = []
     try:
-        for x in range (len(f)):
-            if f[x]=='"""':
-                for i in range (len(f)):
-                    if f[i+1]!='"""':
-                        v.append(f[x+1])
+        for x in range(len(f)):
+            if f[x] == '"""':
+                for i in range(len(f)):
+                    if f[i + 1] != '"""':
+                        v.append(f[x + 1])
                     else:
                         raise StopIteration
     except:
         clear()
         for x in v:
             print(x)
-    input()
+    input("input anything to carry on")
 
-        
-    
-def send(x):  
+
+def send(x):
     #runs the program selected
     writes(x)
     print("please press ctrl + c at any time to exit\n")
     os.system("python " + x)
     print("\n\n")
-    p=input("would you like to read the task description?\nyes/no\n")
-    if p=="yes":
+    p = input("would you like to read the task description?\nyes/no\n")
+    if p == "yes":
         read_description(x)
-    
     pick_dir()
 
 
-def recursion(x):  
+def recursion(x):
     #displays the output of paths() in a structured way
     v = paths(x)
     writes(x)
     print("folder:{}\n".format(x))
     [print(str(x) + " --- " + v[x]) for x in range(len(v))]
     try:
-        _ = input("\nwhat file do you want to open / run?\n or press enter to pick directory\n or enter any string to go to main directory\n")
+        _ = input(
+            "\nwhat file do you want to open / run?\n or press enter to pick directory\n or enter any string to go to main directory\n"
+        )
         _ = x + "/" + str(v[int(_)])
     except ValueError:
         if not _:
@@ -116,6 +117,18 @@ def recursion(x):
         clear()
         recursion(x)
     return _
+
+
+def find_files(filename, search_path):
+    result = []
+    for root, dir, files in os.walk(search_path):
+        if filename in files:
+            result.append(os.path.join(root, filename))
+    return result
+
+
+def ff(x):
+    return find_files(x, "/home/runner/all")
 
 
 def find_similar(x):

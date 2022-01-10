@@ -5,14 +5,20 @@ Write a program that stores the name of the item so it can be displayed on an LC
 # the items arent stored on a dat file but a json file as there is practically no documentation of this
 
 import json,difflib
+from _runhelp import ff
+try:
+    v=ff("vend.json",0)
+except TypeError:
+    exit("error code x00000002")
+
 def _save():
-    with open('School-work-objectives/objective9/vend.json', 'w') as f:
+    with open(v, 'w') as f:
         json.dump(notes, f)
 
 def _open():
     global notes
     try:
-        with open('School-work-objectives/objective9/vend.json') as f:
+        with open(v) as f:
             notes = json.load(f)
     except FileNotFoundError:
         print("Could not load vend.json")
