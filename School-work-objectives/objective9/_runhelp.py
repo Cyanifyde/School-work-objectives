@@ -17,3 +17,16 @@ def ff(x,num):
             exit("error code x00000001-2")
     else:
         exit("error code x00000000")
+
+def find(file,*at):
+    try:
+        v=ff(file,at[0])
+        return v
+    except TypeError:
+        if at[0].isnumeric():
+            exit("error code x00000002")
+        else:
+            exit("error code x00000003")
+    except IndexError:
+        exit("error code x00000001")
+        

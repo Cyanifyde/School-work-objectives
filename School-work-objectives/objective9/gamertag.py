@@ -2,11 +2,8 @@
 Write a program that asks the user for their email address and a Gamertag to be used in an online game. These are stored in a text file. Two players cannot share the same email address or Gamertag. This should be checked before writing the data to the file.
 """
 
-from _runhelp import ff
-try:
-    v=ff("gamertag.json",0)
-except TypeError:
-    exit("error code x00000002")
+from _runhelp import find
+v=find("gamertag.json",0)
 
 import json
 def _save():

@@ -13,11 +13,8 @@ import time
 
 clear = lambda: os.system("clear")
 
-from _runhelp import ff
-try:
-    v=ff("notes.json",0)
-except TypeError:
-    exit("error code x00000002")
+from _runhelp import find
+v=find("notes.json",0)
 
 def _save():
     with open(v, 'w') as f:

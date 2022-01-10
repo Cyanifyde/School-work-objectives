@@ -6,11 +6,8 @@ CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCGGA
 CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG
 """
 
-from _runhelp import ff
-try:
-    v=ff("amino.txt",0)
-except TypeError:
-    exit("error code x00000002")
+from _runhelp import find
+v=find("amino.txt",0)
 
 g=open(v,"r").read()
 count_ttt=g.count("TTT")
