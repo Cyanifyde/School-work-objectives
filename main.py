@@ -59,7 +59,7 @@ def paths(x):
     #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__"
+        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.py"
         if not i.endswith((".json", ".txt"))
     ])
 
@@ -164,13 +164,20 @@ def main():
         except FileNotFoundError:
             find_similar(path)
 
+def check_reset():
+    if len(sys.argv)>1:
+        if sys.argv[1]=="reset":
+            pick_dir()
 
 import os
 import time
 import difflib
+import sys
 
 clear = lambda: os.system("clear")
+
 try:
+    check_reset()
     main()
 except:
     os.system("python main.py")

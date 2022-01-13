@@ -1,4 +1,5 @@
 import os
+import time
 
 
 def find_files(filename, search_path):
@@ -8,6 +9,8 @@ def find_files(filename, search_path):
             result.append(os.path.join(root, filename))
     return result
 
+def go_main():
+    os.system("python main.py reset")
 
 def ff(x, num):
     _ = find_files(x, "/home/runner/all")
@@ -15,11 +18,13 @@ def ff(x, num):
         return _[num]
     except IndexError:
         if _ == []:
-            exit("error code x00000001")
+            os.system("python errors.py 1")
+            go_main()
         else:
-            exit("error code x00000001-2")
+            os.system("python errors.py 1-2")
     else:
-        exit("error code x00000000")
+        os.system("python errors.py 0")
+    go_main()
 
 
 class file():
@@ -33,9 +38,11 @@ class file():
                 v.append(ff(self.loc, x))
             except TypeError:
                 if at[0].isnumeric():
-                    exit("error code x00000002")
+                    os.system("python errors.py 2")
                 else:
-                    exit("error code x00000003")
+                    os.system("python errors.py 3")
+                go_main()
             except IndexError:
-                exit("error code x00000001")
+                os.system("python errors.py 1")
+                go_main()
         return v
