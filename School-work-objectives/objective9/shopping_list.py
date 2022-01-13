@@ -7,7 +7,6 @@ def _save(file):
     with open(loc+file+jso, 'w') as f:
         json.dump(notes, f)
 
-
 def _open(file):
     global notes
     try:

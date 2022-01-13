@@ -7,7 +7,6 @@ import os
 
 loc = "/home/runner/all/School-work-objectives/objective9/timesheet/"
 
-
 def writes(item, file):
     f = open(loc + file, "a")
     f.write(item + "\n")

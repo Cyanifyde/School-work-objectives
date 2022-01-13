@@ -6,10 +6,10 @@ CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCGGA
 CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG
 """
 
-from _runhelp import find
-v=find("amino.txt",0)
+from _runhelp import file
+v=file("amino.txt").get(0)[0]
 
-g=open(v,"r").read()
-count_ttt=g.count("TTT")
-count_tta=g.count("TTA")
-print("there is {} TTT's\nand there are {} TTA's".format(count_ttt,count_tta))
+g = open(v, "r").read()
+count_ttt = g.count("TTT")
+count_tta = g.count("TTA")
+print("there is {} TTT's\nand there are {} TTA's".format(count_ttt, count_tta))
