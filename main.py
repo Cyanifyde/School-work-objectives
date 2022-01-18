@@ -2,9 +2,12 @@
 this page has now been made to be readable
 feel lucky you didn't have to read the compressed versions that came before
 please see School-work-objectives/old_programs/
+
+note all files that need to be accessed can be accessed in the /files folder
 """
-
-
+import os
+os.system("python crawl.py")
+input()
 def writes(x):
     #writes to file loc.txt
     f = open("loc.txt", "w")
@@ -28,7 +31,7 @@ def reads():
 
 def pick_dir():
     #allows yoy to navigate back folders after program has run
-    time.sleep(1)
+    time.sleep(0.5)
     y = reads()
     y = y.split("/")
     for x in range(3):
@@ -59,7 +62,7 @@ def paths(x):
     #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.py"
+        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles"
         if not i.endswith((".json", ".txt"))
     ])
 
@@ -78,9 +81,9 @@ def read_description(x):
                         raise StopIteration
     except:
         clear()
-        for x in v:
-            print(x)
-    input("input anything to carry on")
+        print(v[0])
+
+    input("\ninput anything to carry on\n")
 
 
 def send(x):
@@ -118,19 +121,6 @@ def recursion(x):
         recursion(x)
     return _
 
-
-def find_files(filename, search_path):
-    result = []
-    for root, dir, files in os.walk(search_path):
-        if filename in files:
-            result.append(os.path.join(root, filename))
-    return result
-
-
-def ff(x):
-    return find_files(x, "/home/runner/all")
-
-
 def find_similar(x):
     #if file/directory is not found then this function will search for the nearest string similar to the path returned by paths()
     str = ""
@@ -141,7 +131,7 @@ def find_similar(x):
     for t in x:
         str += "/" + t
     words = paths(str)
-    b = difflib.get_close_matches(v, words, cutoff=0.10, n=1)
+    b = difflib.get_close_matches(v, words, cutoff=0.05, n=1)
     str += "/" + b[0]
     writes(str)
     main()
@@ -154,7 +144,7 @@ def main():
     if path == "/home/runner" or path == "/home":
         writes("")
         main()
-    while p == True:
+    while p:
         try:
             clear()
             path = recursion(path)
@@ -164,10 +154,13 @@ def main():
         except FileNotFoundError:
             find_similar(path)
 
+
 def check_reset():
-    if len(sys.argv)>1:
-        if sys.argv[1]=="reset":
+    #checks for different args
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "reset":
             pick_dir()
+
 
 import os
 import time

@@ -1,5 +1,4 @@
 import os
-import time
 
 
 def find_files(filename, search_path):
@@ -9,8 +8,10 @@ def find_files(filename, search_path):
             result.append(os.path.join(root, filename))
     return result
 
+
 def go_main():
     os.system("python main.py reset")
+
 
 def ff(x, num):
     _ = find_files(x, "/home/runner/all")
@@ -32,10 +33,10 @@ class file():
         self.loc: int = loc
 
     def get(self, *at):
-        v=[]
+        v = []
         for x in at:
             try:
-                v.append(ff(self.loc, x))
+                v.append(ff(self.loc[0], x))
             except TypeError:
                 if at[0].isnumeric():
                     os.system("python errors.py 2")

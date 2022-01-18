@@ -6,7 +6,7 @@ Write a program that stores the name of the item so it can be displayed on an LC
 
 import json, difflib
 from _runhelp import file
-v=file("amino.txt").get(0)[0]
+v=file("vend.json").get(0)[0]
 
 
 def _save():
