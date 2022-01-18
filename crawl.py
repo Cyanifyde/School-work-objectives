@@ -9,3 +9,9 @@ for root, directories, files in os.walk(path, topdown=False):
                 print(os.path.join(root, name))
                 list_dir.append(os.path.join(root, name))
 print(list_dir)
+
+f = open("_crawled.txt", "w")
+f = open("_crawled.txt", "a")
+for x in list_dir:
+    f.write(x+"\n")
+f.close()
