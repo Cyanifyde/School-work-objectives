@@ -7,8 +7,6 @@ note all files that need to be accessed can be accessed in the /files folder
 """
 
 import os
-os.system("python crawl.py")
-input()
 def writes(x):
     #writes to file loc.txt
     f = open("loc.txt", "w")
@@ -63,7 +61,7 @@ def paths(x):
     #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles"
+        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.py"
         if not i.endswith((".json", ".txt"))
     ])
 
@@ -172,6 +170,9 @@ clear = lambda: os.system("clear")
 
 try:
     check_reset()
+    for x in range(3):
+        os.system("python crawl.py")
+    time.sleep(1)
     main()
 except:
     os.system("python main.py")
