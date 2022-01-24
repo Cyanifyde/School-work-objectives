@@ -170,7 +170,7 @@ clear = lambda: os.system("clear")
 
 try:
     check_reset()
-    for x in range(3):
+    for x in range(5):
         os.system("python crawl.py")
     time.sleep(1)
     main()
