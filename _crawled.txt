@@ -57,9 +57,6 @@
 /home/runner/all/School-work-objectives/objective8/notebook.py
 /home/runner/all/School-work-objectives/objective9/shopping_lists/today.json
 /home/runner/all/School-work-objectives/objective9/__pycache__/_runhelp.cpython-38.pyc
-/home/runner/all/School-work-objectives/objective9/f/led/bri/grr
-/home/runner/all/School-work-objectives/objective9/f/led/hehe
-/home/runner/all/School-work-objectives/objective9/f/lol
 /home/runner/all/School-work-objectives/objective9/vend.json
 /home/runner/all/School-work-objectives/objective9/gamertag.json
 /home/runner/all/School-work-objectives/objective9/timesheet.py
