@@ -25,5 +25,5 @@ for x in range (len(items)):
         try:
             _='/'.join(at[x].split('/')[0:-1]);os.mkdir(_);print("making dir",''.join(_.split('/')[-1]));add(items,x)
         except:print("directory noneexistant")
-glf=False
+glf=True
 if glf==True:os.remove("_crawled.txt");os.remove("crawl.txt")

@@ -6,7 +6,7 @@ please see School-work-objectives/old_programs/
 note all files that need to be accessed can be accessed in the /files folder
 """
 
-import os
+
 def writes(x):
     #writes to file loc.txt
     f = open("loc.txt", "w")
@@ -36,7 +36,7 @@ def pick_dir():
     for x in range(3):
         del y[0]
     print(
-        "what folder/script do you want to return to?\nplease either input a number or enter anything else to return to the main folder\n"
+        "\nwhat folder/script do you want to return to?\nplease either input a number or enter anything else to return to the main folder\n"
     )
     y.reverse()
     for x in range(len(y)):
@@ -120,6 +120,7 @@ def recursion(x):
         recursion(x)
     return _
 
+
 def find_similar(x):
     #if file/directory is not found then this function will search for the nearest string similar to the path returned by paths()
     str = ""
@@ -157,22 +158,41 @@ def main():
 def check_reset():
     #checks for different args
     if len(sys.argv) > 1:
-        if sys.argv[1] == "reset":
+        arg1 = sys.argv[1]
+        if arg1 == "reset":
             pick_dir()
-
+        elif arg1 == "wipe":
+            writes("")
+            main()
+        elif arg1 == "clear":
+            shutil.rmtree("/home/runner/all/School-work-objectives")
+            
+def check_needed():
+    lists=["crawl.py","errors.py","error.txt"]
+    for file in lists:
+        if not os.path.isfile(file):
+            response = urllib.request.urlopen(
+        "https://raw.githubusercontent.com/pravda-cancri/School-work-objectives/master/"
+        + file)
+            data = response.read()
+            f = open(file, "wb")
+            f.write(data)
+            f.close()
 
 import os
 import time
 import difflib
 import sys
-
+import shutil
+import urllib.request
 clear = lambda: os.system("clear")
 
 try:
     check_reset()
-    for x in range(5):
-        os.system("python crawl.py")
-    time.sleep(1)
+    check_needed()
+    print("____checking for missing files_____")
+    os.system("python crawl.py")
+    time.sleep(0.4)
     main()
 except:
     os.system("python main.py")
