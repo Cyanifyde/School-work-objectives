@@ -155,7 +155,7 @@ def main():
             find_similar(path)
 
 
-def check_reset():
+def check_args():
     #checks for different args
     if len(sys.argv) > 1:
         arg1 = sys.argv[1]
@@ -166,18 +166,21 @@ def check_reset():
             main()
         elif arg1 == "clear":
             shutil.rmtree("/home/runner/all/School-work-objectives")
-            
+            writes("")
+
+
 def check_needed():
-    lists=["crawl.py","errors.py","error.txt"]
+    lists = ["crawl.py", "errors.py", "error.txt"]
     for file in lists:
         if not os.path.isfile(file):
             response = urllib.request.urlopen(
-        "https://raw.githubusercontent.com/pravda-cancri/School-work-objectives/master/"
-        + file)
+                "https://raw.githubusercontent.com/pravda-cancri/School-work-objectives/master/"
+                + file)
             data = response.read()
             f = open(file, "wb")
             f.write(data)
             f.close()
+
 
 import os
 import time
@@ -185,10 +188,11 @@ import difflib
 import sys
 import shutil
 import urllib.request
+
 clear = lambda: os.system("clear")
 
 try:
-    check_reset()
+    check_args()
     check_needed()
     print("____checking for missing files_____")
     os.system("python crawl.py")

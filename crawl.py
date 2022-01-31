@@ -1,5 +1,7 @@
 import os, time, urllib.request
 
+clear = lambda: os.system("clear")
+
 
 def crawl():
     path = '/home/runner/all/School-work-objectives'
@@ -18,6 +20,24 @@ def crawl():
     f.close()
 
 
+def update(loc, no):
+    time.sleep(0.3)
+    if no == 1:
+        print("downloading", loc)
+    elif no == 2:
+        clear()
+        print("making directory", loc)
+        time.sleep(1)
+        clear()
+    elif no == 3:
+        print("finished writing to", loc)
+        time.sleep(0.5)
+        clear()
+    else:
+        print("missing file", loc)
+        time.sleep(0.3)
+
+
 def download_list():
     response = urllib.request.urlopen(
         'https://raw.githubusercontent.com/pravda-cancri/School-work-objectives/master/_crawled.txt'
@@ -33,12 +53,11 @@ def make_dir(item):
 
 
 def write_to_file(data, at):
-    print("downloading", ''.join(at.split('/')[-1]))
+    update(''.join(at.split('/')[-1]), 1)
     f = open(at, "wb")
     f.write(data)
     f.close()
-    time.sleep(0.3)
-    print("finished writing to", ''.join(at.split('/')[-1]))
+    update(''.join(at.split('/')[-1]), 3)
 
 
 def check_dir(item):
@@ -47,7 +66,7 @@ def check_dir(item):
     for x in range(var):
         gr += "/" + ''.join(item.split('/')[x])
         if not os.path.isdir(gr):
-            print("making dir", ''.join(gr.split('/')[-1]))
+            update(''.join(gr.split('/')[-1]), 2)
             make_dir(gr)
 
 
@@ -79,13 +98,14 @@ def check_different():
     g = g.read().splitlines()
     for x in f:
         if x not in g:
-            print("missing", ''.join(x.split('/')[-1]))
-            time.sleep(0.5)
+            update(''.join(x.split('/')[-1]), 4)
             download_item(x)
 
 
 crawl()
-download_list()
-check_different()
-glf=True
-if glf==True:os.remove("_crawled.txt");os.remove("crawl.txt")
+#download_list()
+#check_different()
+glf = False
+if glf == True:
+    os.remove("_crawled.txt")
+    os.remove("crawl.txt")
