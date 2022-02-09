@@ -7,7 +7,8 @@ CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG
 """
 
 from _runhelp import file
-v=file("amino.txt").get(0)[0]
+
+v = file("amino.txt").get(0)[0]
 
 g = open(v, "r").read()
 count_ttt = g.count("TTT")

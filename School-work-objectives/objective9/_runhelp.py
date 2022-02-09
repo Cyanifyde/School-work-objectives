@@ -12,6 +12,9 @@ def find_files(filename, search_path):
 def go_main():
     os.system("python main.py reset")
 
+def goerrors(errorcode):
+    os.system("python errors.py {}".format(errorcode))
+
 
 def ff(x, num):
     _ = find_files(x, "/home/runner/all")
@@ -19,12 +22,12 @@ def ff(x, num):
         return _[num]
     except IndexError:
         if _ == []:
-            os.system("python errors.py 2")
+            goerrors("2")
             go_main()
         else:
-            os.system("python errors.py 1-2")
+            goerrors("1-2")
     else:
-        os.system("python errors.py 0")
+        goerrors("0")
     go_main()
 
 
@@ -39,11 +42,11 @@ class file():
                 v.append(ff(self.loc[0], x))
             except TypeError:
                 if at[0].isnumeric():
-                    os.system("python errors.py 2")
+                    goerrors("2")
                 else:
-                    os.system("python errors.py 3")
+                    goerrors("2")
                 go_main()
             except IndexError:
-                os.system("python errors.py 1")
+                goerrors("1")
                 go_main()
         return v

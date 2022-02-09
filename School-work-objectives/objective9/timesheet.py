@@ -15,7 +15,7 @@ def writes(item, file):
 
 def read(file):
     f = open(loc + file, "r")
-    f = int(f.read())
+    f = f.read()
     return f
 
 
@@ -28,13 +28,28 @@ def seefiles(x):
 
 
 def addhours():
-    x = input("what date do you want to add it to?\nenter it like dd/mm\n")
-    x, y = x.split("/")
+    x1 = input("what date do you want to add it to?\nenter it like dd/mm\n")
+
+    x, y = x1.split("/")
     hours = input("how many hours did you do?")
-    writes(hours, y)
+    months=["january","february","march","april","may","june","july","august","september","october","november","december"]
+    try:
+        y=months[int(y)-1]
+        writes(hours, y)
+    except:
+        print("not a month")
+        addhours()
+    
+
 
 
 def display(map):
+    map=map.splitlines()
+    total=0
+    for x in map:
+        total+=int(x)
+    print(total,"hours were worked that month")
+        
 
 
     
@@ -49,10 +64,9 @@ while running:
         addhours()
     if x == "2":
             x = input(
-        "what month do you want to see the hours for (input the month as a number)?\n"
+        "what month do you want to see the hours for (input the month as a name)?\n"
             )
-            try:
-                v = read(x)
-                display(v)
-            except:
-                print("not a day")
+         
+            v = read(x)
+            display(v)
+

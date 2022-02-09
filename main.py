@@ -188,10 +188,12 @@ import difflib
 import sys
 import shutil
 import urllib.request
+import gc
 
 clear = lambda: os.system("clear")
 
 try:
+    gc.collect()
     check_args()
     check_needed()
     print("____checking for missing files_____")

@@ -3,7 +3,8 @@ Write a program that asks the user for their email address and a Gamertag to be 
 """
 
 from _runhelp import file
-v=file("gamertag.json").get(0)[0]
+
+v = file("gamertag.json").get(0)[0]
 
 import json
 
