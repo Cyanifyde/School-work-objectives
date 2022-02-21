@@ -30,7 +30,7 @@ def reads():
 
 def pick_dir():
     #allows yoy to navigate back folders after program has run
-    time.sleep(0.5)
+    sleep(0.5)
     y = reads()
     y = y.split("/")
     for x in range(3):
@@ -61,7 +61,7 @@ def paths(x):
     #returns all directories /files along a path
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.py"
+        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.pyjsontxtup.py"
         if not i.endswith((".json", ".txt"))
     ])
 
@@ -170,7 +170,7 @@ def check_args():
 
 
 def check_needed():
-    lists = ["crawl.py", "errors.py", "error.txt"]
+    lists = ["crawl.py", "errors.py", "error.txt","jsontxtup.py"]
     for file in lists:
         if not os.path.isfile(file):
             response = urllib.request.urlopen(
@@ -183,22 +183,25 @@ def check_needed():
 
 
 import os
-import time
-import difflib
 import sys
 import shutil
+import difflib
 import urllib.request
-import gc
-
+from gc import collect
+from time import sleep
+from crawl import crawler
+from jsontxtup import filecheckup
 clear = lambda: os.system("clear")
-
 try:
-    gc.collect()
+    collect()
     check_args()
     check_needed()
     print("____checking for missing files_____")
-    os.system("python crawl.py")
-    time.sleep(0.4)
+    crawler()
+    sleep(0.4)
+    print("____checking for server updates_____")
+    filecheckup()
+    sleep(1.2)
     main()
 except:
     os.system("python main.py")

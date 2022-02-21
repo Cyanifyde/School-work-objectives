@@ -101,13 +101,13 @@ def check_different():
             update(''.join(x.split('/')[-1]), 4)
             download_item(x)
 
-
-crawl()
-glhf = False
-if glhf == True:
-    download_list()
-    check_different()
-gl = False
-if gl == True:
-    os.remove("_crawled.txt")
-    os.remove("crawl.txt")
+def crawler():
+    crawl()
+    glhf = True
+    if glhf == True:
+        download_list()
+        check_different()
+    gl = True
+    if gl == True:
+        os.remove("_crawled.txt")
+        os.remove("crawl.txt")
