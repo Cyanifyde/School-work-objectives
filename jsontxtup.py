@@ -2,6 +2,14 @@ import json
 import requests 
 import time
 from _runhelp import file
+def lol():
+
+    url = 'https://www.w3schools.com/python/demopage.php'
+    myobj = {'somekey': 'somevalue'}
+    
+    x = requests.post(url, data = myobj)
+    
+    print(x.text)
 def filecheckup():
     files=["vend.json","cookie.json","gamertag.json","notes.json","attributes.txt"]
     for x in files:
@@ -21,9 +29,9 @@ def filecheckup():
                 print("syncing")
                 g.close()
                 time.sleep(0.5)
-            elif response.json() != notes:
+            elif eval(response.text) != notes:
                 print("file {} has data not synced with server".format(v))
-                response=requests.get("https://api.ent1ty.space/data/{}?get=false&update={}".format(x,notes))
+                requests.post( "https://api.ent1ty.space/data/drop/{}".format(x), json = notes)
                 print("syncing")
                 time.sleep(0.5)
         elif x.endswith("txt"):
@@ -40,7 +48,7 @@ def filecheckup():
                 time.sleep(0.5)
             elif response.text != notes:
                 print("file {} has data not synced with server".format(v))
-                response=requests.get("https://api.ent1ty.space/data/{}?get=false&update={}".format(x,notes))
+                requests.post("https://api.ent1ty.space/data/drop/{}".format(x), data = notes)
                 print("syncing")
                 time.sleep(0.5)
                 

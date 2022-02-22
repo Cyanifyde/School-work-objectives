@@ -192,12 +192,13 @@ from time import sleep
 from crawl import crawler
 from jsontxtup import filecheckup
 clear = lambda: os.system("clear")
+crawler()
 try:
     collect()
     check_args()
     check_needed()
     print("____checking for missing files_____")
-    crawler()
+    
     sleep(0.4)
     print("____checking for server updates_____")
     filecheckup()
