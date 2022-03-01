@@ -14,7 +14,9 @@ import time
 clear = lambda: os.system("clear")
 
 from _runhelp import file
-v=file("notes.json").get(0)[0]
+
+v = file("notes.json").get(0)[0]
+
 
 def _save():
     with open(v, 'w') as f:

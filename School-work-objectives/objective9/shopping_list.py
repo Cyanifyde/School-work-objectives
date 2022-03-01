@@ -3,7 +3,7 @@ Write a program that stores a shopping list for a user in a text file. The user 
 """
 
 
-######################json
+######################json control
 def _save(file):
     with open(loc + file + jso, 'w') as f:
         json.dump(notes, f)

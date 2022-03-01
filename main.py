@@ -138,6 +138,7 @@ def find_similar(x):
 
 
 def main():
+    collect()
     #checks if directory given is a file, if its a file it is run, else it runs recursion() to get to the location you want
     p = True
     path = reads()
@@ -183,6 +184,7 @@ def check_needed():
 
 
 import os
+
 import sys
 import shutil
 import difflib
@@ -192,17 +194,18 @@ from time import sleep
 from crawl import crawler
 from jsontxtup import filecheckup
 clear = lambda: os.system("clear")
-crawler()
+
 try:
     collect()
     check_args()
     check_needed()
     print("____checking for missing files_____")
-    
+    crawler()
     sleep(0.4)
     print("____checking for server updates_____")
     filecheckup()
     sleep(1.2)
+    os.system("python main.py clear")
     main()
 except:
     os.system("python main.py")

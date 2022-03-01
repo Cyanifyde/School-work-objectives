@@ -7,6 +7,7 @@ import os
 
 loc = "/home/runner/all/School-work-objectives/objective9/timesheet/"
 
+
 def writes(item, file):
     f = open(loc + file, "a")
     f.write(item + "\n")
@@ -23,7 +24,10 @@ def seefiles(x):
     return sorted([
         (i) for i in list(os.listdir(x)) if i not in
         ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml"
-        if not i.endswith((".json", ".txt"))
+        if not i.endswith((
+            ".json", ".txt"
+        ))  
+        #makes sure that no files that arent supposed to be seen show up
     ])
 
 
@@ -32,27 +36,24 @@ def addhours():
 
     x, y = x1.split("/")
     hours = input("how many hours did you do?")
-    months=["january","february","march","april","may","june","july","august","september","october","november","december"]
+    months = [
+        "january", "february", "march", "april", "may", "june", "july",
+        "august", "september", "october", "november", "december"
+    ]
     try:
-        y=months[int(y)-1]
+        y = months[int(y) - 1]
         writes(hours, y)
     except:
         print("not a month")
         addhours()
-    
-
 
 
 def display(map):
-    map=map.splitlines()
-    total=0
+    map = map.splitlines()
+    total = 0
     for x in map:
-        total+=int(x)
-    print(total,"hours were worked that month")
-        
-
-
-    
+        total += int(x)
+    print(total, "hours were worked that month")
 
 
 running = True
@@ -63,10 +64,9 @@ while running:
     if x == "1":
         addhours()
     if x == "2":
-            x = input(
-        "what month do you want to see the hours for (input the month as a name)?\n"
-            )
-         
-            v = read(x)
-            display(v)
+        x = input(
+            "what month do you want to see the hours for (input the month as a name)?\n"
+        )
 
+        v = read(x)
+        display(v)

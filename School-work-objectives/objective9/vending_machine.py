@@ -2,20 +2,23 @@
 A vending machine dispenses items to customers when they choose a number between 1 and 25. When an item is dispensed the quantity for the item is reduced by 1. The data about the status of the vending machine is stored in a file called, “vend.dat” on flash memory inside the machine. This allows the status of the machine to be accessed remotely.
 Write a program that stores the name of the item so it can be displayed on an LCD screen and the quantity of the item. When an item is sold, the quantity in the file is updated.
 """
-# the items arent stored on a dat file but a json file as there is practically no documentation of this
 
-import json, difflib
+import json, difflib 
+#imports json and difflib
 from _runhelp import file
 
-v = file("vend.json").get(0)[0]
+v = file("vend.json").get(0)[0] 
+#gets the file location
 
 
-def _save():
+def _save(): 
+    #saves the file
     with open(v, 'w') as f:
         json.dump(notes, f)
 
 
-def _open():
+def _open(): 
+    #opens the file
     global notes
     try:
         with open(v) as f:
@@ -37,7 +40,8 @@ def timesused(item, quantity):
     _save()
 
 
-def _reset():
+def _reset(): 
+    #resets numbers
     timesused("apple", 100)
     timesused("pear", 100)
     timesused("fruit", 100)

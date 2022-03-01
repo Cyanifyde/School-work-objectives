@@ -27,26 +27,27 @@ def _open():
 
 _open()
 _save()
-view="view_theme"
+view = "view_theme"
 if view not in cookies:
-    cookies[view]="lightmode"
+    cookies[view] = "lightmode"
     _save()
 else:
+    cookie = ["lightmode", "darkmode"]
     for x in cookies:
         _open()
-        print("current setting for {} is {}".format(x,cookies[x]))
+        print("current setting for {} is {}".format(x, cookies[x]))
         print("would you like to change this?")
-        v=input()
-        if v=="yes":
-            p=input("1 - lightmode\n2 - darkmode\n")
-            if p =="1":
-                cookies[view]="lightmode"
-            else:
-                cookies[view]="darkmode"
-            _save()
+        v = input()
+        if v == "yes":
+            if x == "view_theme":
+                if cookies[x] in cookie:
+                    cookie.remove(cookies[x])
+                for x in range(len(cookie)):
+                    print("{} - {}\n".format(x, cookie[x]))
+                p = int(input())
+                cookies[view] = cookie[p]
+                _save()
 
 for x in cookies:
     _open()
-
-    print("current setting for {} is {}".format(x,cookies[x]))
-                
+    print("new setting for {} is {}".format(x, cookies[x]))

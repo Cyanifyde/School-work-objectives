@@ -12,6 +12,7 @@ def find_files(filename, search_path):
 def go_main():
     os.system("python main.py reset")
 
+
 def goerrors(errorcode):
     os.system("python errors.py {}".format(errorcode))
 

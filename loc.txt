@@ -1,1 +1,1 @@
-/home/runner/all
+/home/runner/all/School-work-objectives/objective8/tank_game.py

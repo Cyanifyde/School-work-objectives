@@ -27,7 +27,7 @@ def calculate(*arg):
 
 num = str(input("please input a number\n"))
 v = str(factorial(*(num[x] for x in range(len(num)))))
-if v ==num:
+if v == num:
     print("it is a strong number")
 else:
     print("not a strong number")

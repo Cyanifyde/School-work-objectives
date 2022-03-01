@@ -6,4 +6,4 @@ CharacterName://dqwd
 5645
 CharacterName://ewf
 45
-34
+3
