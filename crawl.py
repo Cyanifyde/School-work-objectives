@@ -1,4 +1,4 @@
-import os, time, urllib.request
+import os, time, urllib.request, requests
 
 clear = lambda: os.system("clear")
 
@@ -39,11 +39,11 @@ def update(loc, no):
 
 
 def download_list():
-    response = urllib.request.urlopen(
-        'https://raw.githubusercontent.com/pravda-cancri/School-work-objectives/master/_crawled.txt'
+    response = requests.get(
+        'https://api.ent1ty.space/data/file?get=true&file=_crawled.txt'
     )
-    data = response.read()
-    f = open("crawl.txt", "wb")
+    data = response.text
+    f = open("crawl.txt", "w")
     f.write(data)
     f.close()
 

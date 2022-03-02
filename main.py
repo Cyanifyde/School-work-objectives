@@ -153,7 +153,13 @@ def main():
             send(path)
             p = False
         except FileNotFoundError:
-            find_similar(path)
+            try:
+                find_similar(path)
+            except:
+                os.system("python errors.py 4")
+                _=input("press enter to continue")
+                writes("")
+                main()
 
 
 def check_args():
@@ -196,7 +202,6 @@ from jsontxtup import filecheckup
 clear = lambda: os.system("clear")
 
 try:
-    collect()
     check_args()
     check_needed()
     print("____checking for missing files_____")
@@ -205,7 +210,6 @@ try:
     print("____checking for server updates_____")
     filecheckup()
     sleep(1.2)
-    os.system("python main.py clear")
     main()
-except:
-    os.system("python main.py")
+except: os.system("python main.py")
+os.system("python main.py")

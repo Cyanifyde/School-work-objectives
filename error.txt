@@ -3,3 +3,4 @@ x00000001 = file not found error
 x00000001-2 = file not found error - outside list bounds
 x00000002 = missing arg
 x00000003 = incorrect arg (positions)
+x00000004 = dir not found
