@@ -1,5 +1,4 @@
 import sys
-import time
 #error handles... this way if there is anything that has to be done after an error it can be handled appropriately
 
 number = (str(sys.argv[1]))
@@ -14,5 +13,4 @@ elif number == "3":
 elif number == "4":
     exit("error code x0000000"+number)
 else:
-    
     exit("error code x00000000")

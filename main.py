@@ -1,10 +1,17 @@
 """
 this page has now been made to be readable
 feel lucky you didn't have to read the compressed versions that came before
-please see School-work-objectives/old_programs/
 
-note all files that need to be accessed can be accessed in the /files folder
+note all files that need to be accessed can be accessed in the School-work-objectives/files folder
 """
+
+showextra = False  #<-- change to true to run "extra" files
+showall = False  #<-- do not touch unless debugging
+
+global _showextra
+_showextra = showextra
+global _showall
+_showall = showall
 
 
 def writes(x):
@@ -24,12 +31,12 @@ def reads():
     if f != "":
         _ = f
     else:
-        _ = "/home/runner/all"
+        _ = os.getcwd()
     return _
 
 
 def pick_dir():
-    #allows yoy to navigate back folders after program has run
+    #allows you to navigate back folders after program has run
     sleep(0.5)
     y = reads()
     y = y.split("/")
@@ -59,11 +66,24 @@ def pick_dir():
 
 def paths(x):
     #returns all directories /files along a path
-    return sorted([
-        (i) for i in list(os.listdir(x)) if i not in
-        ".upm.gitextrasmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.pyjsontxtup.py"
-        if not i.endswith((".json", ".txt"))
-    ])
+    if _showall:
+        return sorted([
+            (i) for i in list(os.listdir(x)) if i not in
+            ".upm.gitmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml.__pycache__errors.pyfilefiles_"
+        ])
+
+    elif _showextra:
+        return sorted([
+            (i) for i in list(os.listdir(x)) if i not in
+            ".upm.gitmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.pyjsontxtup.py.eepack"
+            if not i.endswith((".json", ".txt"))
+        ])
+    else:
+        return sorted([
+            (i) for i in list(os.listdir(x)) if i not in
+            ".upm.gitmain.py.breakpointsREADME.mdpoetry.lockpyproject.toml._runhelp.py__pycache__errors.pyfilefiles_crawl.pyjsontxtup.pyextras.eepack"
+            if not i.endswith((".json", ".txt"))
+        ])
 
 
 def read_description(x):
@@ -75,13 +95,12 @@ def read_description(x):
             if f[x] == '"""':
                 for i in range(len(f)):
                     if f[i + 1] != '"""':
-                        v.append(f[x + 1])
+                        v.append(f[i + 1])
                     else:
                         raise StopIteration
     except:
         clear()
-        print(v[0])
-
+        [print(v[i]) for i in range(len(v))]
     input("\ninput anything to carry on\n")
 
 
@@ -90,8 +109,7 @@ def send(x):
     writes(x)
     print("please press ctrl + c at any time to exit\n")
     os.system("python " + x)
-    print("\n\n")
-    p = input("would you like to read the task description?\nyes/no\n")
+    p = input("\n\nwould you like to read the task description?\nyes/no\n")
     if p == "yes":
         read_description(x)
     pick_dir()
@@ -107,7 +125,10 @@ def recursion(x):
         _ = input(
             "\nwhat file do you want to open / run?\n or press enter to pick directory\n or enter any string to go to main directory\n"
         )
-        _ = x + "/" + str(v[int(_)])
+        if _ in v:
+            _ = x + "/" + str(_)
+        else:
+            _ = x + "/" + str(v[int(_)])
     except ValueError:
         if not _:
             clear()
@@ -138,8 +159,8 @@ def find_similar(x):
 
 
 def main():
-    collect()
     #checks if directory given is a file, if its a file it is run, else it runs recursion() to get to the location you want
+    collect()
     p = True
     path = reads()
     if path == "/home/runner" or path == "/home":
@@ -157,9 +178,11 @@ def main():
                 find_similar(path)
             except:
                 os.system("python errors.py 4")
-                _=input("press enter to continue")
+                _ = input("press enter to continue")
                 writes("")
                 main()
+        except:
+            pass
 
 
 def check_args():
@@ -177,7 +200,7 @@ def check_args():
 
 
 def check_needed():
-    lists = ["crawl.py", "errors.py", "error.txt","jsontxtup.py"]
+    lists = ["crawl.py", "errors.py", "error.txt", "jsontxtup.py"]
     for file in lists:
         if not os.path.isfile(file):
             response = urllib.request.urlopen(
@@ -190,26 +213,29 @@ def check_needed():
 
 
 import os
-
 import sys
 import shutil
 import difflib
 import urllib.request
 from gc import collect
 from time import sleep
-from crawl import crawler
-from jsontxtup import filecheckup
-clear = lambda: os.system("clear")
-
+from crawl import crawler # <-currently broken
+from jsontxtup import filecheckup 
+try:
+    clear = lambda: os.system("clear")
+except:
+    clear = lambda: os.system("clr")
+#crawler()  <-currently broken
 try:
     check_args()
     check_needed()
     print("____checking for missing files_____")
-    crawler()
+    #crawler()  <-currently broken
     sleep(0.4)
     print("____checking for server updates_____")
-    filecheckup()
+    filecheckup()  
     sleep(1.2)
     main()
-except: os.system("python main.py")
+except:
+    os.system("python main.py")
 os.system("python main.py")

@@ -104,11 +104,13 @@ def check_different():
 
 def crawler():
     crawl()
-    glhf = True
+    glhf = False
     if glhf == True:
         download_list()
         check_different()
-    gl = True
-    if gl == True:
-        os.remove("_crawled.txt")
-        os.remove("crawl.txt")
+    try:
+        gl = True
+        if gl == True:
+            os.remove("_crawled.txt")
+            os.remove("crawl.txt")
+    except: pass
